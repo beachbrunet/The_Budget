@@ -1,5 +1,7 @@
 # The Budget
 
+A budget tracker application that gives isers a fast and easy way to track their money, having offline functionality.
+
 ## Requirements
 
 <!-- ----------------------- -->
@@ -25,7 +27,23 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 <!-- ----------------------- -->
 
-## Resources
+- Base code
+- node.js
+- express
+- Mongoose
+- Morgan
+- nodemon
+
+## Resources and Dependancies
+
+[Mongoose](https://www.npmjs.com/package/mongoose)
+command-line: `npm i mongoose`
+
+[Morgan](https://www.npmjs.com/package/morgan)
+command-line: `npm i morgan`
+
+[nodemon](https://www.npmjs.com/package/nodemon)
+command-line: `npm i nodemon`
 
 [MongoDB - addFields (aggregation)](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/)
 
