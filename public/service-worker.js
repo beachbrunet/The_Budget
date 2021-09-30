@@ -5,9 +5,18 @@ const CACHE_NAME = "static-cache-v2";
 // data caches
 const DATA_CACHE_NAME = "data-cache-v1";
 // files to caches
-const FILES_TO_CACHE = [];
+const FILES_TO_CACHE = [
+  "./index.hmtl",
+  "./style.css",
+  "./manifest.webmanifest",
+  "/icons/icon-192x192.png",
+  "/icons/icon-192x192.png",
+  "/style.css",
+];
 // install
-
+self.addEventListener("install", function (evt) {
+  //
+});
 // tell browser to activate to this js file (once its done installing)
 
 //remove old cache
