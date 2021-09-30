@@ -36,16 +36,16 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 ## Resources and Dependancies
 
-[Mongoose](https://www.npmjs.com/package/mongoose)
-command-line: `npm i mongoose`
+- [Mongoose](https://www.npmjs.com/package/mongoose)<br />
+  command-line: `npm i mongoose`
 
-[Morgan](https://www.npmjs.com/package/morgan)
-command-line: `npm i morgan`
+- [Morgan](https://www.npmjs.com/package/morgan)<br />
+  command-line: `npm i morgan`
 
-[nodemon](https://www.npmjs.com/package/nodemon)
-command-line: `npm i nodemon`
+- [nodemon](https://www.npmjs.com/package/nodemon)<br />
+  command-line: `npm i nodemon`
 
-[MongoDB - addFields (aggregation)](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/)
+- [MongoDB - addFields (aggregation)](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/)
 
 ## Heroku
 
