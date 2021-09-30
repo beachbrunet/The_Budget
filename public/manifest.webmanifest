@@ -1,0 +1,11 @@
+{
+    "name": "Images App",
+    "short_name": "Images App",
+    "icons": [
+      {
+        "src": "assets/images/icons/icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+      },
+    //   This is an example needs to be filled with correct stuff
+    
