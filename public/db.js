@@ -26,6 +26,26 @@ request.onerror = function (event) {
 // function to submit a new transaction if there is no internet/offline mode
 // check if app is online before it reads the db
 // open, store, record
+function saveRecord(record) {
+  // open
+  const transaction = db.transaction(["pending"], "readwrite");
+  // access the store
+  const store = transaction.objectStore("pending");
+  store.add(record);
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // open, store, record
 
 // look to see if the db is back online
