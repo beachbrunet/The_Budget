@@ -25,7 +25,7 @@ request.onerror = function (event) {
 
 // function to submit a new transaction if there is no internet/offline mode
 // check if app is online before it reads the db
-// open, store, record
+// open, access store, record
 function saveRecord(record) {
   // open
   const transaction = db.transaction(["pending"], "readwrite");
@@ -33,6 +33,56 @@ function saveRecord(record) {
   const store = transaction.objectStore("pending");
   store.add(record);
 }
+// open, access store, record
+function uploadTransaction() {
+  // open
+  const transaction = db.transaction(["pending"], "readwrite");
+  // access the store
+  const store = transaction.objectStore("pending");
+  store.add(record);
+}
+
+// post to JSON using fetch
+getAll.something = function () {
+  if (getAll.result.length > 0) {
+    fetch("API", {
+      method: "POST",
+    });
+  }
+};
+// example code structure
+//request.onupgradeneeded = function(e) {
+//     const db = request.result;
+//     db.createObjectStore(storeName, { keyPath: "_id" });
+//   };
+
+//   request.onerror = function(e) {
+//     console.log("There was an error");
+//   };
+
+//   request.onsuccess = function(e) {
+//     db = request.result;
+//     tx = db.transaction(storeName, "readwrite");
+//     store = tx.objectStore(storeName);
+
+//     db.onerror = function(e) {
+//       console.log("error");
+//     };
+//     if (method === "put") {
+//       store.put(object);
+//     }
+//     if (method === "get") {
+//       const all = store.getAll();
+//       all.onsuccess = function() {
+//         resolve(all.result);
+//       };
+//     }
+//     tx.oncomplete = function() {
+//       db.close();
+//     };
+//   };
+// });
+// }
 //
 //
 //
@@ -45,8 +95,6 @@ function saveRecord(record) {
 //
 //
 //
-//
-// open, store, record
 
 // look to see if the db is back online
 // window.addEventListener("online", uploadTransaction);
