@@ -18,6 +18,10 @@ request.onsuccess = function (e) {
     uploadTransation();
   }
 };
+// log error
+request.onerror = function (event) {
+  console.log("Oops" + event.target.errorCode);
+};
 
 // check if app is online before it reads the db
 
