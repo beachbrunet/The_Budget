@@ -47,7 +47,17 @@ getAll.something = function () {
   if (getAll.result.length > 0) {
     fetch("API", {
       method: "POST",
-    });
+      body: JSON.stringify(getAll.result),
+      headers: {
+          Accept: something
+      }
+    })
+    .then(response => response.json())
+    .then(() => {
+        const transaction = db.transaction(["pending"], "readwrite");
+        const transaction = db.transaction(["pending"], "readwrite");
+        store.clear();
+    }
   }
 };
 // example code structure
