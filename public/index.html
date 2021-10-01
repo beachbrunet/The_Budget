@@ -42,20 +42,20 @@
     
     <canvas id="myChart"></canvas>
   </div>
-  <script>
-    (function () {
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/service-worker.js" {scope: "/"}
-        .then((res) => {
-          console.log(res);
-          console.log("We found your service worker file!", reg);
-        })
-        .catch(err => console.log ("Transaction Failed:", error));
-      });
-    }
-  }
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
+    <script>
+      // 
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then(reg => {
+            // display message when succesful/registered
+            console.log("We found your service worker file!", reg);
+          })
+          // addded a fail error
+          .catch(error => console.log("Service Worker registration failed:", error));
+        });
+      }
+    </script>
 </body>
 </html>
