@@ -74,7 +74,7 @@ self.addEventListener("fetch", function (evt) {
 
     return;
   }
-
+  // this allows the page to be accessible offline - static file
   evt.respondWith(
     caches.match(evt.request).then(function (response) {
       return response || fetch(evt.request);
