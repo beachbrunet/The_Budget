@@ -60,6 +60,13 @@ getAll.something = function () {
     }
   }
 };
+// 
+// 
+
+
+
+
+
 // example code structure
 //request.onupgradeneeded = function(e) {
 //     const db = request.result;
@@ -94,17 +101,7 @@ getAll.something = function () {
 // });
 // }
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 // look to see if the db is back online
 // window.addEventListener("online", uploadTransaction);
