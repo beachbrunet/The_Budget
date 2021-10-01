@@ -15,7 +15,7 @@ request.onsuccess = function (e) {
   db = e.target.result;
   //   Check to see if its online, if yes then send data to the api.
   if (navigator.online) {
-    uploadTransation();
+    uploadTransaction();
   }
 };
 // log error
@@ -23,6 +23,10 @@ request.onerror = function (event) {
   console.log("Oops" + event.target.errorCode);
 };
 
+// function to submit a new transaction if there is no internet/offline mode
 // check if app is online before it reads the db
+// open, store, record
+// open, store, record
 
 // look to see if the db is back online
+// window.addEventListener("online", uploadTransaction);
