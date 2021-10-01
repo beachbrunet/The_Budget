@@ -1,4 +1,8 @@
 console.log("Hello from service worker!");
+// simple outline
+// install
+// activate
+// fetch
 
 // Static cache
 const CACHE_NAME = "static-cache-v2";
@@ -10,7 +14,7 @@ const FILES_TO_CACHE = [
   "./style.css",
   "./manifest.webmanifest",
   "/icons/icon-192x192.png",
-  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png",
   "/style.css",
 ];
 // install
@@ -26,7 +30,7 @@ self.addEventListener("install", function (evt) {
 });
 
 // activate service worker --added code from exmaple
-self.addEventListener("install", function (evt) {
+self.addEventListener("activate", function (evt) {
   evt.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(
@@ -43,11 +47,37 @@ self.addEventListener("install", function (evt) {
   self.clients.claim();
 });
 
-// tell browser to activate to this js file (once its done installing)
+// fetch
+self.addEventListener("fetch", function (evt) {
+  // cache successful requests to the API
+  if (evt.request.url.includes("/api/")) {
+    evt.respondWith(
+      caches
+        .open(DATA_CACHE_NAME)
+        .then((cache) => {
+          return fetch(evt.request)
+            .then((response) => {
+              // If the response was good, clone it and store it in the cache.
+              if (response.status === 200) {
+                cache.put(evt.request.url, response.clone());
+              }
 
-//remove old cache
+              return response;
+            })
+            .catch((err) => {
+              // Network request failed, try to get it from the cache.
+              return cache.match(evt.request);
+            });
+        })
+        .catch((err) => console.log(err))
+    );
 
-//
+    return;
+  }
 
-//
-// if request fails, serve static files from the cache -(allows page to be accessible offline)
+  evt.respondWith(
+    caches.match(evt.request).then(function (response) {
+      return response || fetch(evt.request);
+    })
+  );
+});

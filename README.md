@@ -45,7 +45,15 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 - [nodemon](https://www.npmjs.com/package/nodemon)<br />
   command-line: `npm i nodemon`
 
-- [MongoDB - addFields (aggregation)](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/)
+## Helpful Links
+
+- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
+- [MongoDB Website](https://www.mongodb.com/)
+- [Robo 3T Website](https://robomongo.org/download)
+- [MongoJS Documentation](https://www.npmjs.com/package/mongojs)
+- [Mongoose Documentation](http://mongoosejs.com/docs/guide.html)
+- [routes on Node.js and MongoDB](https://www.geeksforgeeks.org/restfull-routes-on-node-js-and-mongodb/)
+- [The Offline Cookbook](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#cache-falling-back-to-network)
 
 ## Heroku
 
@@ -57,13 +65,14 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 <!-- ----------------------- -->
 
-URL to the github repo ()
+URL to the github repo: https://github.com/beachbrunet/The_Budget
 
 ## Contributions and Contact Information
 
 <!-- ----------------------- -->
 
 ```
+
 Catherine Cox
 
 ccox.034@gmail.com
