@@ -59,6 +59,7 @@ getAll.onsuccess = function () {
         const transaction = db.transaction(["pending"], "readwrite");
         // access the object
         const store = transaction.objectStore("pending");
+        // clear items in the store
         store.clear();
       });
   }
