@@ -1,3 +1,4 @@
+// added base code
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -7,7 +8,7 @@ const PORT = process.env || 3001;
 
 const app = express();
 
-// middleware
+// middleware -- read about logger and morgan
 app.use(logger("dev"));
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +22,7 @@ mongoose.connect("mongodb://localhost/budget", {
   useFindAndModify: false,
 });
 
-// routes
+// link routes
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
