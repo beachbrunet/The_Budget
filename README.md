@@ -21,7 +21,7 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 <!-- ----------------------- -->
 
-![Screen Shot]()
+![Screen Shot](/assets/transaction.png)
 
 ## Technologies
 
@@ -44,6 +44,7 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 - [nodemon](https://www.npmjs.com/package/nodemon)<br />
   command-line: `npm i nodemon`
+  Comands: npm run watch and npm start
 
 ## Helpful Links
 
