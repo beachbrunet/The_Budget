@@ -49,7 +49,7 @@ getAll.something = function () {
       method: "POST",
       body: JSON.stringify(getAll.result),
       headers: {
-          Accept: something
+          Accept: "application/json, text"
       }
     })
     .then(response => response.json())
@@ -58,7 +58,7 @@ getAll.something = function () {
         const transaction = db.transaction(["pending"], "readwrite");
         store.clear();
     }
-  }
+  })
 };
 // 
 // 
