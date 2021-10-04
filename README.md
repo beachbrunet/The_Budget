@@ -36,6 +36,8 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 ## Resources and Dependancies
 
+Basic Comands: npm run watch and npm start
+
 - [Mongoose](https://www.npmjs.com/package/mongoose)<br />
   command-line: `npm i mongoose`
 
@@ -44,7 +46,15 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 - [nodemon](https://www.npmjs.com/package/nodemon)<br />
   command-line: `npm i nodemon`
-  Comands: npm run watch and npm start
+
+- [express](https://www.npmjs.com/package/express)<br />
+  command-line: `npm i express`
+
+- [compression](https://www.npmjs.com/package/compression)<br />
+  command-line: `npm i compression`
+
+- [lite-server](https://www.npmjs.com/package/lite-server)<br />
+  command-line: `npm i lite-server`
 
 ## Helpful Links
 
