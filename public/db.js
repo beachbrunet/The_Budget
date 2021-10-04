@@ -45,7 +45,7 @@ function uploadTransaction() {
 // post to JSON using fetch, sending the DB to the api server
 getAll.onsuccess = function () {
   if (getAll.result.length > 0) {
-    fetch("/models/transaction", {
+    fetch("/api/transaction", {
       method: "POST",
       body: JSON.stringify(getAll.result),
       headers: {
