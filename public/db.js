@@ -31,7 +31,7 @@ function saveRecord(record) {
   const transaction = db.transaction(["pending"], "readwrite");
   // access the store
   const store = transaction.objectStore("pending");
-  store.add(record);
+  store.add(record); /* add method */
 }
 // open, access store, record
 function uploadTransaction() {
@@ -42,66 +42,27 @@ function uploadTransaction() {
   store.add(record);
 }
 
-// post to JSON using fetch
+// post to JSON using fetch, sending the DB to the api server
 getAll.something = function () {
   if (getAll.result.length > 0) {
-    fetch("API", {
+    fetch("/models/transaction", {
       method: "POST",
       body: JSON.stringify(getAll.result),
       headers: {
-          Accept: "application/json, text"
-      }
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
     })
-    .then(response => response.json())
-    .then(() => {
+      .then((response) => response.json())
+      .then(() => {
+        // when the request is successful, open transaction
         const transaction = db.transaction(["pending"], "readwrite");
-        const transaction = db.transaction(["pending"], "readwrite");
+        // access the object
+        const store = transaction.objectStore("pending");
         store.clear();
-    }
-  })
+      });
+  }
 };
-// 
-// 
-
-
-
-
-
-// example code structure
-//request.onupgradeneeded = function(e) {
-//     const db = request.result;
-//     db.createObjectStore(storeName, { keyPath: "_id" });
-//   };
-
-//   request.onerror = function(e) {
-//     console.log("There was an error");
-//   };
-
-//   request.onsuccess = function(e) {
-//     db = request.result;
-//     tx = db.transaction(storeName, "readwrite");
-//     store = tx.objectStore(storeName);
-
-//     db.onerror = function(e) {
-//       console.log("error");
-//     };
-//     if (method === "put") {
-//       store.put(object);
-//     }
-//     if (method === "get") {
-//       const all = store.getAll();
-//       all.onsuccess = function() {
-//         resolve(all.result);
-//       };
-//     }
-//     tx.oncomplete = function() {
-//       db.close();
-//     };
-//   };
-// });
-// }
-//
-
 
 // look to see if the db is back online
-// window.addEventListener("online", uploadTransaction);
+window.addEventListener("online", uploadTransaction);
