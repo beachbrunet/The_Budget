@@ -21,7 +21,8 @@ GIVEN a user is on Budget App without an internet connection WHEN the user input
 
 <!-- ----------------------- -->
 
-![Screen Shot](/assets/transaction.png)
+![Screen Shot](./assets/transaction.png)
+![Screen Shot](./assets/query.png)
 
 ## Technologies
 
